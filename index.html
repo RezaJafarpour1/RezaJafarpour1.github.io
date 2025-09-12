@@ -13,7 +13,7 @@
   <meta property="og:image" content="/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Favicon (will be kept in sync by the script below) -->
+  <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14' font-size='14'>RJ</text></svg>">
 
   <style>
@@ -255,7 +255,7 @@
       <div class="container">
         <h2>Publications</h2>
         <div class="list">
-    
+
           <article class="pub">
             <strong>
               <a href="https://ieeexplore.ieee.org/abstract/document/10607059" target="_blank" rel="noopener">
@@ -264,7 +264,7 @@
             </strong><br>
             <span class="meta">IEEE International Conference on Mobility: Operations, Services, and Technologies (MOST), 2024.</span>
           </article>
-    
+
           <article class="pub">
             <strong>
               <a href="https://ieeexplore.ieee.org/abstract/document/10745602" target="_blank" rel="noopener">
@@ -273,7 +273,7 @@
             </strong><br>
             <span class="meta">IEEE Internet of Things Journal (IoT-J), 2024.</span>
           </article>
-    
+
           <article class="pub">
             <strong>
               <a href="https://dl.acm.org/doi/abs/10.1145/3736412" target="_blank" rel="noopener">
@@ -282,7 +282,7 @@
             </strong><br>
             <span class="meta">ACM Transactions on Embedded Computing Systems (TECS), 2025.</span>
           </article>
-    
+
         </div>
       </div>
     </section>
@@ -291,7 +291,7 @@
       <div class="container">
         <h2>Projects</h2>
         <div class="two-col">
-    
+
           <!-- TECS companion project -->
           <div class="project">
             <h3>Reaction Latency Analysis Toolkit (TECS companion)</h3>
@@ -302,21 +302,21 @@
               <a href="https://dl.acm.org/doi/abs/10.1145/3736412" target="_blank" rel="noopener">TECS paper</a>
             </p>
           </div>
-    
+
           <!-- CUDA course project #1 -->
           <div class="project">
             <h3>GEMM Microbenchmark Capstone (CUDA)</h3>
             <p>Implements and benchmarks single-precision GEMM across CPU, naïve CUDA, tiled shared-memory kernels, and cuBLAS, with a CLI, CSV logging, many-small vs few-large runs, and plotting.</p>
             <p><a href="https://github.com/RezaJafarpour1/GEMM_CAPSTONE" target="_blank" rel="noopener">Repository</a></p>
           </div>
-    
+
           <!-- CUDA course project #2 -->
           <div class="project">
             <h3>CUDA Image Pipeline — GPU Specialization Project</h3>
             <p>Multi-stream CUDA pipeline for grayscale PGM images with Gaussian blur, box filter, Sobel edges, and histogram equalization; logs per-op timings and throughput.</p>
             <p><a href="https://github.com/RezaJafarpour1/GPU_Specialization_Project" target="_blank" rel="noopener">Repository</a></p>
           </div>
-    
+
         </div>
       </div>
     </section>
@@ -389,22 +389,6 @@
 
   <script>
   window.addEventListener('DOMContentLoaded', () => {
-    /* --- Auto-generate initials from the name and sync favicon --- */
-    const nameEl = document.querySelector('.brand span');
-    const initials = (nameEl?.textContent || 'Reza Jafarpourmarzouni')
-      .trim()
-      .split(/\s+/)
-      .map(s => s[0])
-      .slice(0, 2)
-      .join('')
-      .toUpperCase();
-
-    document.querySelectorAll('.logo, .sidebar-brand').forEach(el => { el.textContent = initials; });
-    const fav = document.querySelector('link[rel="icon"]');
-    if (fav) {
-      fav.href = `data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14' font-size='14'>${initials}</text></svg>`;
-    }
-
     // Theme on <html>
     const root = document.documentElement;
     const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
