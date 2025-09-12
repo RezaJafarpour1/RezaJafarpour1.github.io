@@ -77,14 +77,19 @@
 
     /* Headshot */
     .headshot-card{ display:grid; place-items:center }
+    
     .headshot{
-      width:160px; height:160px;     /* change to 200x200 if you want larger */
-      border-radius:22px;            /* use 50% for a circle */
-      object-fit:cover;
-      display:block;
-      border:1px solid var(--border);
-      background:var(--bg-elev);
-      box-shadow:var(--shadow);
+      /* Grow with viewport, but stay within sensible bounds */
+      width: clamp(200px, 28vw, 360px);
+      height: clamp(200px, 28vw, 360px);
+    
+      /* look & fit */
+      object-fit: cover;
+      border-radius: 22px;          /* use 50% for a circle */
+      display: block;
+      border: 1px solid var(--border);
+      background: var(--bg-elev);
+      box-shadow: var(--shadow);
     }
 
     /* Sections */
@@ -427,3 +432,4 @@
   </script>
 </body>
 </html>
+
