@@ -394,7 +394,7 @@
       const remaining = docHeight - viewportBottom;
 
       // Pivot line ~30% below header
-      const pivotY = window.scrollY + headerH + window.innerHeight * 0.30;
+      const pivotY = window.scrollY + headerH + window.innerHeight * 0.40;
 
       // If truly at bottom, snap to last section
       const lastEl = sections[sections.length - 1];
@@ -410,8 +410,8 @@
 
       // Gate last section: require both depth into it and adequate remaining scroll
       if (candidate === lastEl.id){
-        const minDepth = 120;                 // pixels the pivot must be inside "contact"
-        const minRemaining = 80;              // require some room to scroll; avoids premature switch
+        const minDepth = 140;                 // pixels the pivot must be inside "contact"
+        const minRemaining = 90;              // require some room to scroll; avoids premature switch
         if (pivotY < lastEl.offsetTop + minDepth || remaining < minRemaining){
           candidate = prevActive;             // stay on Teaching until deeper into Contact or at very bottom
         }
@@ -431,3 +431,4 @@
   </script>
 </body>
 </html>
+
