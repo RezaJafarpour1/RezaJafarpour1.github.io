@@ -19,30 +19,27 @@
   <style>
     /* ===== Theme tokens (dark by default) ===== */
     :root{
-      --bg: #0b1020;           /* page background */
-      --bg-elev: #11162a;      /* elevated surfaces */
-      --text: #e6ebff;         /* primary text */
-      --muted:#a7b0d4;         /* secondary text */
-      --accent:#6aa1ff;        /* accent */
-      --accent-2:#94f1c7;      /* secondary accent */
-      --card:#0f1426;          /* card fill */
-      --border:#1f2742;        /* borders */
+      --bg: #0b1020;
+      --bg-elev: #11162a;
+      --text: #e6ebff;
+      --muted:#a7b0d4;
+      --accent:#6aa1ff;
+      --accent-2:#94f1c7;
+      --card:#0f1426;
+      --border:#1f2742;
       --shadow: 0 10px 30px rgba(0,0,0,.35);
-      /* header gradient (dark) */
       --hdr1: rgba(11,16,32,.92);
       --hdr2: rgba(11,16,32,.70);
     }
-
-    /* Light theme overrides applied on <html> (root) */
     :root[data-theme="light"]{
       --bg: #ffffff;
-      --bg-elev: #ffffff;   /* unify cards & background for maximum contrast */
-      --text: #0a1636;      /* darker text for readability */
-      --muted:#3b4a6a;      /* stronger muted color */
+      --bg-elev: #ffffff;
+      --text: #0a1636;
+      --muted:#3b4a6a;
       --accent:#1d4ed8;
       --accent-2:#0ea5e9;
       --card:#ffffff;
-      --border:#d9e0f2;     /* clearer separation of sections */
+      --border:#d9e0f2;
       --shadow: 0 10px 30px rgba(3,7,18,.08);
       --hdr1: rgba(255,255,255,.92);
       --hdr2: rgba(255,255,255,.70);
@@ -77,19 +74,15 @@
 
     /* Headshot */
     .headshot-card{ display:grid; place-items:center }
-    
     .headshot{
-      /* Grow with viewport, but stay within sensible bounds */
       width: clamp(200px, 28vw, 360px);
       height: clamp(200px, 28vw, 360px);
-    
-      /* look & fit */
       object-fit: cover;
-      border-radius: 22px;          /* use 50% for a circle */
-      display: block;
-      border: 1px solid var(--border);
-      background: var(--bg-elev);
-      box-shadow: var(--shadow);
+      border-radius:22px;   /* use 50% for a circle */
+      display:block;
+      border:1px solid var(--border);
+      background:var(--bg-elev);
+      box-shadow:var(--shadow);
     }
 
     /* Sections */
@@ -119,7 +112,6 @@
     .theme-toggle{display:flex;align-items:center;gap:10px;margin-top:8px}
     .switch{position:relative;display:inline-block;width:56px;height:28px}
     .switch input{opacity:0;width:0;height:0}
-
     .slider{
       position:absolute;cursor:pointer;inset:0;
       background:var(--bg);
@@ -128,7 +120,6 @@
       box-sizing:border-box;
       transition:.2s;
     }
-    /* Knob — perfectly centered by 3px margins (28h - 22h)/2 */
     .slider:before{
       content:"";
       position:absolute;
@@ -138,8 +129,6 @@
       background-color:var(--text);
       box-shadow:0 2px 6px rgba(0,0,0,.25);
       transition:.2s;
-
-      /* Moon icon (dark mode) in knob */
       background-repeat:no-repeat;
       background-position:center;
       background-size:16px 16px;
@@ -147,12 +136,11 @@
 <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230b1020'>\
 <path d='M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z'/></svg>");
     }
-    /* Light mode (checked): track gradient, knob right + sun icon */
     .switch input:checked + .slider{
       background:linear-gradient(135deg,var(--accent),var(--accent-2));
     }
     .switch input:checked + .slider:before{
-      transform:translateX(28px); /* 56 - 22 - 6 = 28px */
+      transform:translateX(28px);
       background-color:#071022;
       background-image:url("data:image/svg+xml;utf8,\
 <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>\
@@ -161,12 +149,10 @@
 </svg>");
     }
 
-    /* Show sidebar on wide screens */
     @media(min-width: 1024px){
       body{padding-left:220px}
       .sidebar{display:block}
     }
-
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}
   </style>
 </head>
@@ -179,7 +165,6 @@
         <div class="logo" aria-hidden="true">RZ</div>
         <span>Reza Jafarpourmarzouni</span>
       </div>
-      <!-- Navigation handled by the sidebar -->
     </div>
   </header>
 
@@ -213,18 +198,18 @@
             <a class="btn primary" href="#projects">See projects</a>
             <a class="btn" href="#publications">Read publications</a>
             <a class="btn" href="https://github.com/RezaJafarpour1" target="_blank" rel="noopener">GitHub</a>
-            <a class="btn" href="https://www.linkedin.com/in/rezajrp" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn" href="https://www.linkedin.com/in/reza-jafarpourmarzouni-3471b3277/" target="_blank" rel="noopener">LinkedIn</a>
           </div>
           <p class="small" style="margin-top:10px">Actively seeking roles in real-time/embedded systems, autonomy platforms, and edge computing.</p>
         </div>
 
-        <!-- Headshot card — JPEG only to avoid fallback issues -->
+        <!-- Headshot -->
         <div class="card headshot-card">
           <img
             class="headshot"
             src="assets/reza.jpg?v=2"
             alt="Reza Jafarpourmarzouni headshot"
-            width="320" height="320"
+            width="400" height="400"
             loading="eager" decoding="async">
         </div>
       </div>
@@ -301,39 +286,20 @@
       </div>
     </section>
 
-    <section id="teaching">
-      <div class="container two-col">
-        <div class="card">
-          <h2>Teaching & Service</h2>
-          <ul class="list">
-            <li>Graduate Teaching Assistant — proctoring, mentoring, grading, and lab support.</li>
-            <li>Reviewer for embedded/real-time venues; student mentoring and outreach.</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h2>Talks</h2>
-          <ul class="list">
-            <li>Invited/department talks on edge-assisted autonomy and predictable GPU inference.</li>
-            <li>Conference presentations and poster sessions (IROS Detroit, etc.).</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
     <section id="contact">
       <div class="container two-col">
         <div class="card">
           <h2>Contact</h2>
           <p>If you'd like to discuss research or roles in real-time autonomy systems, feel free to reach out.</p>
-          <p>Email: <a id="email" href="#">[enable JS]</a></p>
-          <p>Also on <a href="https://www.linkedin.com/in/rezajrp" target="_blank" rel="noopener">LinkedIn</a> and <a href="https://github.com/RezaJafarpour1" target="_blank" rel="noopener">GitHub</a>.</p>
+          <p>Email: <a id="email" href="mailto:RezaJafarpour.1998@gmail.com">RezaJafarpour.1998@gmail.com</a></p>
+          <p>Also on <a href="https://www.linkedin.com/in/reza-jafarpourmarzouni-3471b3277/" target="_blank" rel="noopener">LinkedIn</a> and <a href="https://github.com/RezaJafarpour1" target="_blank" rel="noopener">GitHub</a>.</p>
         </div>
         <div class="card">
           <h2>CV & Links</h2>
           <ul class="list">
             <li><a href="./Reza_Jafarpourmarzouni_CV.pdf" target="_blank" rel="noopener">Download CV (PDF)</a></li>
-            <li><a href="#">Google Scholar</a> · <a href="#">Semantic Scholar</a></li>
-            <li><a href="#">ORCID</a> · <a href="#">DBLP</a></li>
+            <li><a href="https://scholar.google.com/citations?user=dpwrYojlrH0C&hl=en" target="_blank" rel="noopener">Google Scholar</a></li>
+            <li><a href="https://orcid.org/0009-0008-9631-8473" target="_blank" rel="noopener">ORCID</a></li>
           </ul>
           <p class="small">Place your <code>Reza_Jafarpourmarzouni_CV.pdf</code> in the same folder as this page.</p>
         </div>
@@ -356,17 +322,20 @@
     "name": "Reza Jafarpourmarzouni",
     "jobTitle": "Ph.D. Researcher in Computer Science",
     "affiliation": {"@type":"CollegeOrUniversity","name":"Wayne State University"},
-    "url": "https://example.com",
+    "url": "https://rezajafarpour1.github.io/RezaJafarpourmarzouni.github.io/",
     "sameAs": [
-      "https://www.linkedin.com/in/rezajrp",
-      "https://github.com/RezaJafarpour1"
+      "mailto:RezaJafarpour.1998@gmail.com",
+      "https://www.linkedin.com/in/reza-jafarpourmarzouni-3471b3277/",
+      "https://github.com/RezaJafarpour1",
+      "https://scholar.google.com/citations?user=dpwrYojlrH0C&hl=en",
+      "https://orcid.org/0009-0008-9631-8473"
     ]
   }
   </script>
 
   <script>
   window.addEventListener('DOMContentLoaded', () => {
-    // THEME on <html> (root) so backgrounds + header use the same palette
+    // Theme on <html>
     const root = document.documentElement;
     const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
     const storedTheme = localStorage.getItem('theme');
@@ -382,7 +351,7 @@
       });
     }
 
-    // Scrollspy + observer highlight
+    // Scrollspy
     const ids = ['about','publications','projects','teaching','contact'];
     const secEls = ids.map(id => document.getElementById(id)).filter(Boolean);
 
@@ -417,19 +386,7 @@
     // Footer info
     document.getElementById('year').textContent = new Date().getFullYear();
     document.getElementById('updated').textContent = new Date().toLocaleDateString();
-
-    // Email obfuscation
-    (function(){
-      const user = 'reza.jrp';
-      const domain = 'gmail.com';
-      const link = document.getElementById('email');
-      if (link){
-        link.textContent = user + '@' + domain;
-        link.href = 'mailto:' + user + '@' + domain;
-      }
-    })();
   });
   </script>
 </body>
 </html>
-
