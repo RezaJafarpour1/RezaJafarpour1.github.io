@@ -66,7 +66,7 @@
     .small{font-size:12px;color:var(--muted)}
 
     /* Sections */
-    section{padding:18px 24px}
+    section{padding:18px 24px; scroll-margin-top: 84px}
     section h2{font-size:28px;margin:8px 0 16px}
     .two-col{display:grid;gap:18px}
     @media(min-width:800px){.two-col{grid-template-columns:1fr 1fr}}
@@ -78,6 +78,30 @@
 
     /* Footer */
     footer{padding:40px 24px;border-top:1px solid var(--border);color:var(--muted);text-align:center}
+
+    /* Sidebar */
+    .sidebar{position:fixed;left:12px;top:76px;width:188px;bottom:20px;background:var(--bg-elev);border:1px solid var(--border);border-radius:16px;padding:12px;box-shadow:var(--shadow);display:none}
+    .sidebar .sidebar-inner{display:flex;flex-direction:column;gap:8px}
+    .sidebar-brand{display:grid;place-items:center;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#071022;font-weight:800;letter-spacing:.5px}
+    .side-link{display:block;padding:10px 12px;border:1px solid var(--border);border-radius:12px;color:var(--muted);position:relative}
+    .side-link:hover{border-color:var(--accent);color:var(--text)}
+    .side-link.active{color:var(--text);border-color:var(--accent);box-shadow:0 0 0 2px rgba(106,161,255,.25), 0 0 14px rgba(148,241,199,.3) inset}
+    .side-link.active::before{content:"";position:absolute;left:-6px;top:8px;bottom:8px;width:4px;border-radius:4px;background:linear-gradient(180deg,var(--accent),var(--accent-2));box-shadow:0 0 8px rgba(106,161,255,.6)}
+    .side-btn{border:1px solid var(--border);background:var(--bg)}
+    /* Theme toggle switch */
+    .theme-toggle{display:flex;align-items:center;gap:10px;margin-top:8px}
+    .switch{position:relative;display:inline-block;width:46px;height:26px}
+    .switch input{opacity:0;width:0;height:0}
+    .slider{position:absolute;cursor:pointer;inset:0;background:var(--bg);border:1px solid var(--border);border-radius:999px;transition:.2s}
+    .slider:before{content:"";position:absolute;height:20px;width:20px;left:3px;top:2px;background:var(--text);border-radius:50%;transition:.2s}
+    .switch input:checked + .slider{background:linear-gradient(135deg,var(--accent),var(--accent-2));}
+    .switch input:checked + .slider:before{transform:translateX(20px);background:#071022}
+
+    /* Layout shift for sidebar on wide screens */
+    @media(min-width: 1024px){
+      body{padding-left:220px}
+      .sidebar{display:block}
+    }
 
     /* Mobile menu */
     .hamburger{display:inline-flex;flex-direction:column;gap:4px;border:1px solid var(--border);background:var(--bg-elev);padding:10px;border-radius:10px}
@@ -97,22 +121,28 @@
         <span>Reza Jafarpourmarzouni</span>
       </div>
 
-      <nav class="nav-links">
-        <button id="menuBtn" class="hamburger" aria-label="Toggle menu" aria-controls="menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-        <div id="menu" role="menu" aria-label="Primary">
-          <a href="#about">About</a>
-          <a href="#publications">Publications</a>
-          <a href="#projects">Projects</a>
-          <a href="#teaching">Teaching</a>
-          <a href="#contact">Contact</a>
-          <button id="theme" class="btn" aria-label="Toggle theme">Toggle theme</button>
-          <a class="btn primary" href="./Reza_Jafarpourmarzouni_CV.pdf" target="_blank" rel="noopener">Download CV</a>
-        </div>
-      </nav>
+      <nav aria-label="Main"></nav>
     </div>
   </header>
+
+  <aside class="sidebar" aria-label="Section navigation">
+    <div class="sidebar-inner">
+      <div class="sidebar-brand">RZ</div>
+      <a href="#about" class="side-link">About</a>
+      <a href="#publications" class="side-link">Publications</a>
+      <a href="#projects" class="side-link">Projects</a>
+      <a href="#teaching" class="side-link">Teaching</a>
+      <a href="#contact" class="side-link">Contact</a>
+      <a href="./Reza_Jafarpourmarzouni_CV.pdf" class="side-link" download>CV</a>
+      <div class="theme-toggle" role="group" aria-label="Theme toggle">
+        <label class="switch">
+          <input type="checkbox" id="themeSwitch" aria-label="Toggle light/dark theme">
+          <span class="slider"></span>
+        </label>
+        <span class="small">Light mode</span>
+      </div>
+    </div>
+  </aside>
 
   <main id="main">
     <section class="hero">
@@ -274,11 +304,13 @@
     // Mobile menu toggle
     const menuBtn = document.getElementById('menuBtn');
     const menu = document.getElementById('menu');
-    menuBtn.addEventListener('click', () => {
-      const open = menu.style.display === 'flex';
-      menu.style.display = open ? 'none' : 'flex';
-      menuBtn.setAttribute('aria-expanded', String(!open));
-    });
+    if (menuBtn && menu){
+      menuBtn.addEventListener('click', () => {
+        const open = menu.style.display === 'flex';
+        menu.style.display = open ? 'none' : 'flex';
+        menuBtn.setAttribute('aria-expanded', String(!open));
+      });
+    }
 
     // Theme toggle with persistence + prefers-color-scheme
     const themeBtn = document.getElementById('theme');
@@ -287,11 +319,57 @@
     if (storedTheme) document.body.setAttribute('data-theme', storedTheme);
     else if (prefersLight) document.body.setAttribute('data-theme','light');
 
-    themeBtn.addEventListener('click', () => {
-      const t = document.body.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-      document.body.setAttribute('data-theme', t);
+    if (themeBtn){
+      themeBtn.addEventListener('click', () => {
+        const t = document.body.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+        document.body.setAttribute('data-theme', t);
+        localStorage.setItem('theme', t);
+      });
+    }
       localStorage.setItem('theme', t);
     });
+
+    // Sidebar active link highlight (scrollspy + observer)
+    const ids = ['about','publications','projects','teaching','contact'];
+    const secEls = ids.map(id => document.getElementById(id)).filter(Boolean);
+
+    function setActive(id){
+      document.querySelectorAll('.side-link[href^="#"]').forEach(a=>{ a.classList.remove('active'); a.removeAttribute('aria-current');});
+      const link = document.querySelector(`.side-link[href="#${id}"]`);
+      if (link){ link.classList.add('active'); link.setAttribute('aria-current','location'); }
+    }
+
+    // Fallback scroll calculation
+    function setActiveByScroll(){
+      let bestId = null, bestDist = Infinity, focusY = window.innerHeight * 0.35;
+      secEls.forEach(el=>{ const r = el.getBoundingClientRect(); const d = Math.abs(r.top - focusY); if(d < bestDist){ bestDist = d; bestId = el.id; }});
+      if (bestId) setActive(bestId);
+    }
+
+    // IntersectionObserver for more accurate section tracking
+    const ratios = {};
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ ratios[e.target.id] = e.intersectionRatio; });
+      const best = Object.entries(ratios).sort((a,b)=>b[1]-a[1])[0];
+      if (best) setActive(best[0]);
+    }, { root: null, rootMargin: '-25% 0px -55% 0px', threshold: [0,0.25,0.5,0.75,1] });
+    secEls.forEach(el=> io.observe(el));
+
+    ['scroll','resize'].forEach(evt => window.addEventListener(evt, setActiveByScroll, {passive:true}));
+    setActiveByScroll();
+
+    // Theme toggle from sidebar (checkbox)
+    const themeSwitch = document.getElementById('themeSwitch');
+    if (themeSwitch){
+      // Initialize from current state (which came from storage or prefers-color-scheme)
+      themeSwitch.checked = (document.body.getAttribute('data-theme') === 'light');
+      themeSwitch.addEventListener('change', () => {
+        const t = themeSwitch.checked ? 'light' : 'dark';
+        document.body.setAttribute('data-theme', t);
+        localStorage.setItem('theme', t);
+      });
+    });
+    }
 
     // Footer year + updated date
     document.getElementById('year').textContent = new Date().getFullYear();
