@@ -17,7 +17,6 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14' font-size='14'>RJ</text></svg>">
 
   <style>
-    /* ===== Theme tokens (dark by default) ===== */
     :root{
       --bg: #0b1020;
       --bg-elev: #11162a;
@@ -61,7 +60,6 @@
     .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.2px}
     .brand .logo{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;color:white;font-size:14px;box-shadow:var(--shadow)}
 
-    /* Hero */
     .hero{padding:64px 24px 36px}
     .grid{display:grid;gap:28px}
     @media(min-width:900px){.grid{grid-template-columns:1.2fr .8fr;align-items:center}}
@@ -72,20 +70,18 @@
     .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
     .small{font-size:12px;color:var(--muted)}
 
-    /* Headshot */
     .headshot-card{ display:grid; place-items:center }
     .headshot{
       width: clamp(200px, 28vw, 360px);
       height: clamp(200px, 28vw, 360px);
       object-fit: cover;
-      border-radius:22px;   /* use 50% for a circle */
+      border-radius:22px;
       display:block;
       border:1px solid var(--border);
       background:var(--bg-elev);
       box-shadow:var(--shadow);
     }
 
-    /* Sections */
     section{padding:18px 24px; scroll-margin-top: 84px}
     section h2{font-size:28px;margin:8px 0 16px}
     .two-col{display:grid;gap:18px}
@@ -96,10 +92,8 @@
     .project{padding:16px;border:1px solid var(--border);border-radius:14px;background:var(--bg-elev)}
     .project h3{margin:0 0 8px;font-size:18px}
 
-    /* Footer */
     footer{padding:40px 24px;border-top:1px solid var(--border);color:var(--muted);text-align:center}
 
-    /* Sidebar */
     .sidebar{position:fixed;left:12px;top:76px;width:188px;bottom:20px;background:var(--bg-elev);border:1px solid var(--border);border-radius:16px;padding:12px;box-shadow:var(--shadow);display:none}
     .sidebar .sidebar-inner{display:flex;flex-direction:column;gap:8px}
     .sidebar-brand{display:grid;place-items:center;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#071022;font-weight:800;letter-spacing:.5px}
@@ -108,7 +102,6 @@
     .side-link.active{color:var(--text);border-color:var(--accent);box-shadow:0 0 0 2px rgba(106,161,255,.25), 0 0 14px rgba(148,241,199,.3) inset}
     .side-link.active::before{content:"";position:absolute;left:-6px;top:8px;bottom:8px;width:4px;border-radius:4px;background:linear-gradient(180deg,var(--accent),var(--accent-2));box-shadow:0 0 8px rgba(106,161,255,.6)}
 
-    /* Theme toggle switch (knob carries the icon) */
     .theme-toggle{display:flex;align-items:center;gap:10px;margin-top:8px}
     .switch{position:relative;display:inline-block;width:56px;height:28px}
     .switch input{opacity:0;width:0;height:0}
@@ -206,21 +199,14 @@
           <p class="small" style="margin-top:10px"></p>
         </div>
 
-        <!-- Headshot -->
         <div class="card headshot-card">
-          <img
-            class="headshot"
-            src="assets/reza.jpg?v=2"
-            alt="Reza Jafarpourmarzouni headshot"
-            width="400" height="400"
-            loading="eager" decoding="async">
+          <img class="headshot" src="assets/reza.jpg?v=2" alt="Reza Jafarpourmarzouni headshot" width="400" height="400" loading="eager" decoding="async">
         </div>
       </div>
     </section>
 
     <section id="about">
       <div class="container two-col">
-        <!-- About -->
         <div class="card">
           <h2>About</h2>
           <p>
@@ -236,7 +222,6 @@
           </ul>
         </div>
 
-        <!-- Highlights -->
         <div class="card">
           <h2>Highlights</h2>
           <ul class="list">
@@ -253,34 +238,20 @@
       <div class="container">
         <h2>Publications</h2>
         <div class="list">
-
           <article class="pub">
-            <strong>
-              <a href="https://ieeexplore.ieee.org/abstract/document/10607059" target="_blank" rel="noopener">
-                Enhancing Real-Time Inference Performance for Time-Critical Software-Defined Vehicles
-              </a>
-            </strong><br>
+            <strong><a href="https://ieeexplore.ieee.org/abstract/document/10607059" target="_blank" rel="noopener">Enhancing Real-Time Inference Performance for Time-Critical Software-Defined Vehicles</a></strong><br>
             <span class="meta">IEEE International Conference on Mobility: Operations, Services, and Technologies (MOST), 2024.</span>
           </article>
 
           <article class="pub">
-            <strong>
-              <a href="https://ieeexplore.ieee.org/abstract/document/10745602" target="_blank" rel="noopener">
-                Towards Real-Time and Efficient Perception Workflows in Software-Defined Vehicles
-              </a>
-            </strong><br>
+            <strong><a href="https://ieeexplore.ieee.org/abstract/document/10745602" target="_blank" rel="noopener">Towards Real-Time and Efficient Perception Workflows in Software-Defined Vehicles</a></strong><br>
             <span class="meta">IEEE Internet of Things Journal (IoT-J), 2024.</span>
           </article>
 
           <article class="pub">
-            <strong>
-              <a href="https://dl.acm.org/doi/abs/10.1145/3736412" target="_blank" rel="noopener">
-                Reaction Latency Analysis of Message Synchronization in Edge-Assisted Autonomous Driving
-              </a>
-            </strong><br>
+            <strong><a href="https://dl.acm.org/doi/abs/10.1145/3736412" target="_blank" rel="noopener">Reaction Latency Analysis of Message Synchronization in Edge-Assisted Autonomous Driving</a></strong><br>
             <span class="meta">ACM Transactions on Embedded Computing Systems (TECS), 2025.</span>
           </article>
-
         </div>
       </div>
     </section>
@@ -289,32 +260,23 @@
       <div class="container">
         <h2>Projects</h2>
         <div class="two-col">
-
-          <!-- TECS companion project -->
           <div class="project">
             <h3>Reaction Latency Analysis Toolkit (TECS companion)</h3>
             <p>Code & experiments for <em>Reaction Latency Analysis of Message Synchronization in Edge-Assisted Autonomous Driving</em>—includes scenario generators, sweep runners, and plotting utilities.</p>
-            <p>
-              <a href="https://github.com/RezaJafarpour1/Latency-Analysis" target="_blank" rel="noopener">Repository</a>
-              ·
-              <a href="https://dl.acm.org/doi/abs/10.1145/3736412" target="_blank" rel="noopener">TECS paper</a>
-            </p>
+            <p><a href="https://github.com/RezaJafarpour1/Latency-Analysis" target="_blank" rel="noopener">Repository</a> · <a href="https://dl.acm.org/doi/abs/10.1145/3736412" target="_blank" rel="noopener">TECS paper</a></p>
           </div>
 
-          <!-- CUDA course project #1 -->
           <div class="project">
             <h3>GEMM Microbenchmark Capstone (CUDA)</h3>
             <p>Implements and benchmarks single-precision GEMM across CPU, naïve CUDA, tiled shared-memory kernels, and cuBLAS, with a CLI, CSV logging, many-small vs few-large runs, and plotting.</p>
             <p><a href="https://github.com/RezaJafarpour1/GEMM_CAPSTONE" target="_blank" rel="noopener">Repository</a></p>
           </div>
 
-          <!-- CUDA course project #2 -->
           <div class="project">
             <h3>CUDA Image Pipeline — GPU Specialization Project</h3>
             <p>Multi-stream CUDA pipeline for grayscale PGM images with Gaussian blur, box filter, Sobel edges, and histogram equalization; logs per-op timings and throughput.</p>
             <p><a href="https://github.com/RezaJafarpour1/GPU_Specialization_Project" target="_blank" rel="noopener">Repository</a></p>
           </div>
-
         </div>
       </div>
     </section>
@@ -322,7 +284,6 @@
     <section id="teaching">
       <div class="container">
         <h2>Teaching</h2>
-
         <div class="card">
           <p><strong>Graduate Teaching Assistant (Fall 2023 – Summer 2025)</strong></p>
           <ul class="list">
@@ -389,26 +350,16 @@
   window.addEventListener('DOMContentLoaded', () => {
     /* --- Auto-generate initials from the name and sync favicon --- */
     const nameEl = document.querySelector('.brand span');
-    const initials = (nameEl?.textContent || 'Reza Jafarpourmarzouni')
-      .trim()
-      .split(/\s+/)
-      .map(s => s[0])
-      .slice(0, 2)
-      .join('')
-      .toUpperCase();
-
+    const initials = (nameEl?.textContent || 'Reza Jafarpourmarzouni').trim().split(/\s+/).map(s => s[0]).slice(0, 2).join('').toUpperCase();
     document.querySelectorAll('.logo, .sidebar-brand').forEach(el => { el.textContent = initials; });
     const fav = document.querySelector('link[rel="icon"]');
-    if (fav) {
-      fav.href = `data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14' font-size='14'>${initials}</text></svg>`;
-    }
+    if (fav) fav.href = `data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14' font-size='14'>${initials}</text></svg>`;
 
     // Theme on <html>
     const root = document.documentElement;
     const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
     const storedTheme = localStorage.getItem('theme');
     root.setAttribute('data-theme', storedTheme ? storedTheme : (prefersLight ? 'light' : 'dark'));
-
     const themeSwitch = document.getElementById('themeSwitch');
     if (themeSwitch){
       themeSwitch.checked = (root.getAttribute('data-theme') === 'light');
@@ -419,35 +370,54 @@
       });
     }
 
-    /* ===== Scrollspy (pivot-line method) ===== */
+    /* ===== Scrollspy (pivot + gating for last section) ===== */
     const ids = ['about','publications','projects','teaching','contact'];
     const sections = ids.map(id => document.getElementById(id)).filter(Boolean);
     const headerEl = document.querySelector('header');
+    let prevActive = sections[0]?.id || null;
 
     function setActive(id){
+      if (!id || id === prevActive) return;
       document.querySelectorAll('.side-link[href^="#"]').forEach(a=>{
         a.classList.remove('active'); a.removeAttribute('aria-current');
       });
       const link = document.querySelector(`.side-link[href="#${id}"]`);
       if (link){ link.classList.add('active'); link.setAttribute('aria-current','location'); }
+      prevActive = id;
     }
 
     function setActiveByScroll(){
       const headerH = (headerEl?.offsetHeight || 80);
-      const pivot = window.scrollY + headerH + window.innerHeight * 0.25; // 25% below header
-      const docBottom = window.scrollY + window.innerHeight;
-      const maxScroll = document.documentElement.scrollHeight - 4;
+      const doc = document.documentElement;
+      const docHeight = doc.scrollHeight;
+      const viewportBottom = window.scrollY + window.innerHeight;
+      const remaining = docHeight - viewportBottom;
 
-      // If we're at the very bottom, force last section
-      if (docBottom >= maxScroll) { setActive(sections[sections.length-1].id); return; }
+      // Pivot line ~30% below header
+      const pivotY = window.scrollY + headerH + window.innerHeight * 0.30;
 
-      let current = sections[0]?.id;
+      // If truly at bottom, snap to last section
+      const lastEl = sections[sections.length - 1];
+      if (viewportBottom >= docHeight - 2) { setActive(lastEl.id); return; }
+
+      // Find the section that contains the pivot
+      let candidate = prevActive;
       for (const el of sections){
         const top = el.offsetTop;
         const bottom = top + el.offsetHeight;
-        if (pivot >= top && pivot < bottom) { current = el.id; break; }
+        if (pivotY >= top && pivotY < bottom){ candidate = el.id; break; }
       }
-      if (current) setActive(current);
+
+      // Gate last section: require both depth into it and adequate remaining scroll
+      if (candidate === lastEl.id){
+        const minDepth = 120;                 // pixels the pivot must be inside "contact"
+        const minRemaining = 80;              // require some room to scroll; avoids premature switch
+        if (pivotY < lastEl.offsetTop + minDepth || remaining < minRemaining){
+          candidate = prevActive;             // stay on Teaching until deeper into Contact or at very bottom
+        }
+      }
+
+      setActive(candidate);
     }
 
     window.addEventListener('scroll', setActiveByScroll, { passive:true });
