@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Reza Jafarpourmarzouni — Real‑Time & Embedded Systems</title>
-  <meta name="description" content="Ph.D. researcher focused on real‑time & embedded systems for edge‑assisted autonomous driving. Publications, projects, CV, and contact." />
-  
-  <!-- Open Graph / Twitter (replace content values) -->
+  <title>Reza Jafarpourmarzouni — Real-Time & Embedded Systems</title>
+  <meta name="description" content="Ph.D. researcher focused on real-time & embedded systems for edge-assisted autonomous driving. Publications, projects, CV, and contact." />
+
+  <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Reza Jafarpourmarzouni — Portfolio" />
-  <meta property="og:description" content="Real‑time & embedded systems • Edge‑assisted autonomous driving" />
+  <meta property="og:description" content="Real-time & embedded systems • Edge-assisted autonomous driving" />
   <meta property="og:image" content="/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  
-  <!-- Favicon (replace with your files when ready) -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14' font-size='14'>RZ</text></svg>">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14' font-size='14'>RZ</text></svg>'">
 
   <style>
     :root{
@@ -47,11 +47,6 @@
     .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
     .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.2px}
     .brand .logo{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;color:white;font-size:14px;box-shadow:var(--shadow)}
-    .nav-links{display:flex;gap:18px;align-items:center}
-    .nav-links a{color:var(--muted)}
-    .btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);background:var(--bg-elev);color:var(--text);padding:10px 14px;border-radius:12px;font-weight:600;box-shadow:var(--shadow)}
-    .btn:hover{transform:translateY(-1px);transition:transform .15s}
-    .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#071022;border:0}
 
     /* Hero */
     .hero{padding:64px 24px 36px}
@@ -87,7 +82,6 @@
     .side-link:hover{border-color:var(--accent);color:var(--text)}
     .side-link.active{color:var(--text);border-color:var(--accent);box-shadow:0 0 0 2px rgba(106,161,255,.25), 0 0 14px rgba(148,241,199,.3) inset}
     .side-link.active::before{content:"";position:absolute;left:-6px;top:8px;bottom:8px;width:4px;border-radius:4px;background:linear-gradient(180deg,var(--accent),var(--accent-2));box-shadow:0 0 8px rgba(106,161,255,.6)}
-    .side-btn{border:1px solid var(--border);background:var(--bg)}
     /* Theme toggle switch */
     .theme-toggle{display:flex;align-items:center;gap:10px;margin-top:8px}
     .switch{position:relative;display:inline-block;width:46px;height:26px}
@@ -103,25 +97,19 @@
       .sidebar{display:block}
     }
 
-    /* Mobile menu */
-    .hamburger{display:inline-flex;flex-direction:column;gap:4px;border:1px solid var(--border);background:var(--bg-elev);padding:10px;border-radius:10px}
-    .hamburger span{width:20px;height:2px;background:var(--text)}
-    #menu{display:none}
-    @media(min-width:900px){#menu{display:flex}}
-
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}
   </style>
 </head>
 <body>
   <a class="sr-only" href="#main">Skip to content</a>
+
   <header>
     <div class="container nav">
       <div class="brand">
         <div class="logo" aria-hidden="true">RZ</div>
         <span>Reza Jafarpourmarzouni</span>
       </div>
-
-      <nav aria-label="Main"></nav>
+      <!-- No top nav; sidebar provides navigation -->
     </div>
   </header>
 
@@ -134,6 +122,7 @@
       <a href="#teaching" class="side-link">Teaching</a>
       <a href="#contact" class="side-link">Contact</a>
       <a href="./Reza_Jafarpourmarzouni_CV.pdf" class="side-link" download>CV</a>
+
       <div class="theme-toggle" role="group" aria-label="Theme toggle">
         <label class="switch">
           <input type="checkbox" id="themeSwitch" aria-label="Toggle light/dark theme">
@@ -148,16 +137,16 @@
     <section class="hero">
       <div class="container grid">
         <div class="card">
-          <div class="kicker">Real‑Time & Embedded Systems • Edge‑Assisted Autonomous Driving</div>
+          <div class="kicker">Real-Time & Embedded Systems • Edge-Assisted Autonomous Driving</div>
           <h1>Hi, I’m Reza — I design dependable timing for autonomy.</h1>
-          <p class="lead">Ph.D. researcher at Wayne State University working on predictable scheduling and systems for software‑defined vehicles. I bridge on‑board and edge compute so perception & control meet deadlines.</p>
+          <p class="lead">Ph.D. researcher at Wayne State University working on predictable scheduling and systems for software-defined vehicles. I bridge on-board and edge compute so perception & control meet deadlines.</p>
           <div class="actions">
             <a class="btn primary" href="#projects">See projects</a>
             <a class="btn" href="#publications">Read publications</a>
             <a class="btn" href="https://github.com/RezaJafarpour1" target="_blank" rel="noopener">GitHub</a>
             <a class="btn" href="https://www.linkedin.com/in/rezajrp" target="_blank" rel="noopener">LinkedIn</a>
           </div>
-          <p class="small" style="margin-top:10px">Actively seeking roles in real‑time/embedded systems, autonomy platforms, and edge computing.</p>
+          <p class="small" style="margin-top:10px">Actively seeking roles in real-time/embedded systems, autonomy platforms, and edge computing.</p>
         </div>
         <div class="card" style="display:grid;place-items:center">
           <div class="avatar" aria-label="Avatar with initials">RZ</div>
@@ -170,9 +159,9 @@
       <div class="container two-col">
         <div class="card">
           <h2>About</h2>
-          <p>I build theory‑grounded, experimentally‑validated scheduling for real‑time autonomous systems. My work spans utilization modeling, DAG scheduling, GPU inference timing, and edge offloading. I like transforming research into practical, dependable systems.</p>
+          <p>I build theory-grounded, experimentally-validated scheduling for real-time autonomous systems. My work spans utilization modeling, DAG scheduling, GPU inference timing, and edge offloading. I like transforming research into practical, dependable systems.</p>
           <ul class="list">
-            <li>Research areas: real‑time & embedded systems, edge computing, autonomous driving, GPU scheduling.</li>
+            <li>Research areas: real-time & embedded systems, edge computing, autonomous driving, GPU scheduling.</li>
             <li>Tooling: Python/CUDA/C++, PyTorch, ROS, Linux, Matplotlib, GitHub Actions.</li>
             <li>Keywords: EDF, DAG tasks, limited preemption, offloading, response time, schedulability.</li>
           </ul>
@@ -180,9 +169,9 @@
         <div class="card">
           <h2>Highlights</h2>
           <ul class="list">
-            <li>First‑author publications and submissions in top venues (ACM TECS, IEEE IoT‑J, MOST).</li>
-            <li>Built large scenario sweeps for schedulability & deadline‑miss analysis; reproducible pipelines.</li>
-            <li>Designed edge‑assisted scheduling techniques (e.g., PreCISE, DART) for predictable perception.</li>
+            <li>First-author publications and submissions in top venues (ACM TECS, IEEE IoT-J, MOST).</li>
+            <li>Built large scenario sweeps for schedulability & deadline-miss analysis; reproducible pipelines.</li>
+            <li>Designed edge-assisted scheduling techniques (e.g., PreCISE, DART) for predictable perception.</li>
           </ul>
         </div>
       </div>
@@ -193,18 +182,18 @@
         <h2>Selected Publications</h2>
         <div class="list">
           <article class="pub">
-            <strong>Reaction Latency Analysis of Message Synchronization in Edge‑Assisted Autonomous Driving</strong><br>
+            <strong>Reaction Latency Analysis of Message Synchronization in Edge-Assisted Autonomous Driving</strong><br>
             <span class="meta">ACM Transactions on Embedded Computing Systems (TECS), 2025. <em>(accepted)</em></span>
           </article>
           <article class="pub">
-            <strong>Towards Real‑Time and Efficient Perception Workflows in Software‑Defined Vehicles</strong><br>
-            <span class="meta">IEEE Internet of Things Journal (IoT‑J), 2024.</span>
+            <strong>Towards Real-Time and Efficient Perception Workflows in Software-Defined Vehicles</strong><br>
+            <span class="meta">IEEE Internet of Things Journal (IoT-J), 2024.</span>
           </article>
           <article class="pub">
-            <strong>Enhancing Real‑Time Inference Performance for Time‑Critical Software‑Defined Vehicles</strong><br>
+            <strong>Enhancing Real-Time Inference Performance for Time-Critical Software-Defined Vehicles</strong><br>
             <span class="meta">IEEE MOST, 2024.</span>
           </article>
-          <p class="small">Add links to PDFs/DOIs/Preprints. You can also auto‑generate this list from a BibTeX file later.</p>
+          <p class="small">Add links to PDFs/DOIs/Preprints. You can also auto-generate this list from a BibTeX file later.</p>
         </div>
       </div>
     </section>
@@ -215,17 +204,17 @@
         <div class="two-col">
           <div class="project">
             <h3>PreCISE — Predictable GPU Scheduling</h3>
-            <p>Limited‑preemptive scheduling for concurrent DNN inference with strong timing guarantees. Includes pipelines for profiling, schedulability sweeps, and visualization.</p>
+            <p>Limited-preemptive scheduling for concurrent DNN inference with strong timing guarantees. Includes pipelines for profiling, schedulability sweeps, and visualization.</p>
             <p><a href="#">Code</a> · <a href="#">Paper</a></p>
           </div>
           <div class="project">
-            <h3>DART — Dependency‑Aware Offloading for DAGs</h3>
-            <p>Node‑level offloading of DAG tasks to edge servers with response‑time analysis, ensuring critical‑path deadlines while raising utilization.</p>
+            <h3>DART — Dependency-Aware Offloading for DAGs</h3>
+            <p>Node-level offloading of DAG tasks to edge servers with response-time analysis, ensuring critical-path deadlines while raising utilization.</p>
             <p><a href="#">Code</a> · <a href="#">Preprint</a></p>
           </div>
           <div class="project">
             <h3>Latency Analysis Toolkit</h3>
-            <p>Reproducible experiments for reaction latency and message synchronization in edge‑assisted AV stacks, with plotting and CSV export.</p>
+            <p>Reproducible experiments for reaction latency and message synchronization in edge-assisted AV stacks, with plotting and CSV export.</p>
             <p><a href="https://github.com/RezaJafarpour1/Latency-Analysis" target="_blank" rel="noopener">Repository</a></p>
           </div>
           <div class="project">
@@ -243,13 +232,13 @@
           <h2>Teaching & Service</h2>
           <ul class="list">
             <li>Graduate Teaching Assistant — proctoring, mentoring, grading, and lab support.</li>
-            <li>Reviewer for embedded/real‑time venues; student mentoring and outreach.</li>
+            <li>Reviewer for embedded/real-time venues; student mentoring and outreach.</li>
           </ul>
         </div>
         <div class="card">
           <h2>Talks</h2>
           <ul class="list">
-            <li>Invited/department talks on edge‑assisted autonomy and predictable GPU inference.</li>
+            <li>Invited/department talks on edge-assisted autonomy and predictable GPU inference.</li>
             <li>Conference presentations and poster sessions (IROS Detroit, etc.).</li>
           </ul>
         </div>
@@ -260,7 +249,7 @@
       <div class="container two-col">
         <div class="card">
           <h2>Contact</h2>
-          <p>If you'd like to discuss research or roles in real‑time autonomy systems, feel free to reach out.</p>
+          <p>If you'd like to discuss research or roles in real-time autonomy systems, feel free to reach out.</p>
           <p>Email: <a id="email" href="#">[enable JS]</a></p>
           <p>Also on <a href="https://www.linkedin.com/in/rezajrp" target="_blank" rel="noopener">LinkedIn</a> and <a href="https://github.com/RezaJafarpour1" target="_blank" rel="noopener">GitHub</a>.</p>
         </div>
@@ -280,11 +269,11 @@
   <footer>
     <div class="container">
       <div>&copy; <span id="year"></span> Reza Jafarpourmarzouni. Built with ❤ for speed, a11y, and clarity.</div>
-      <div class="small">Last updated <span id="updated"></span>. Theme <a href="#" id="themeLink">toggle</a>.</div>
+      <div class="small">Last updated <span id="updated"></span>.</div>
     </div>
   </footer>
 
-  <!-- Structured data (fill handles later) -->
+  <!-- Structured data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -301,83 +290,71 @@
   </script>
 
   <script>
-window.addEventListener('DOMContentLoaded', () => {
-  // (Optional) Mobile menu toggle – guarded in case elements don't exist
-  const menuBtn = document.getElementById('menuBtn');
-  const menu = document.getElementById('menu');
-  if (menuBtn && menu){
-    menuBtn.addEventListener('click', () => {
-      const open = menu.style.display === 'flex';
-      menu.style.display = open ? 'none' : 'flex';
-      menuBtn.setAttribute('aria-expanded', String(!open));
-    });
-  }
+  window.addEventListener('DOMContentLoaded', () => {
+    // Theme init (pref + storage)
+    const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme) document.body.setAttribute('data-theme', storedTheme);
+    else if (prefersLight) document.body.setAttribute('data-theme','light');
 
-  // Theme init (pref + storage)
-  const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
-  const storedTheme = localStorage.getItem('theme');
-  if (storedTheme) document.body.setAttribute('data-theme', storedTheme);
-  else if (prefersLight) document.body.setAttribute('data-theme','light');
-
-  // Sidebar theme switch
-  const themeSwitch = document.getElementById('themeSwitch');
-  if (themeSwitch){
-    themeSwitch.checked = (document.body.getAttribute('data-theme') === 'light');
-    themeSwitch.addEventListener('change', () => {
-      const t = themeSwitch.checked ? 'light' : 'dark';
-      document.body.setAttribute('data-theme', t);
-      localStorage.setItem('theme', t);
-    });
-  }
-
-  // Scrollspy + observer highlight
-  const ids = ['about','publications','projects','teaching','contact'];
-  const secEls = ids.map(id => document.getElementById(id)).filter(Boolean);
-
-  function setActive(id){
-    document.querySelectorAll('.side-link[href^="#"]').forEach(a=>{
-      a.classList.remove('active'); a.removeAttribute('aria-current');
-    });
-    const link = document.querySelector(`.side-link[href="#${id}"]`);
-    if (link){ link.classList.add('active'); link.setAttribute('aria-current','location'); }
-  }
-
-  function setActiveByScroll(){
-    let bestId = null, bestDist = Infinity, focusY = window.innerHeight * 0.35;
-    secEls.forEach(el=>{
-      const r = el.getBoundingClientRect();
-      const d = Math.abs(r.top - focusY);
-      if (d < bestDist){ bestDist = d; bestId = el.id; }
-    });
-    if (bestId) setActive(bestId);
-  }
-
-  const ratios = {};
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{ ratios[e.target.id] = e.intersectionRatio; });
-    const best = Object.entries(ratios).sort((a,b)=>b[1]-a[1])[0];
-    if (best) setActive(best[0]);
-  }, { root: null, rootMargin: '-25% 0px -55% 0px', threshold: [0,0.25,0.5,0.75,1] });
-  secEls.forEach(el=> io.observe(el));
-  ['scroll','resize'].forEach(evt => window.addEventListener(evt, setActiveByScroll, {passive:true}));
-  setActiveByScroll();
-
-  // Footer info
-  document.getElementById('year').textContent = new Date().getFullYear();
-  document.getElementById('updated').textContent = new Date().toLocaleDateString();
-
-  // Email obfuscation
-  (function(){
-    const user = 'reza.jrp';
-    const domain = 'gmail.com';
-    const link = document.getElementById('email');
-    if (link){
-      link.textContent = user + '@' + domain;
-      link.href = 'mailto:' + user + '@' + domain;
+    // Sidebar theme switch
+    const themeSwitch = document.getElementById('themeSwitch');
+    if (themeSwitch){
+      themeSwitch.checked = (document.body.getAttribute('data-theme') === 'light');
+      themeSwitch.addEventListener('change', () => {
+        const t = themeSwitch.checked ? 'light' : 'dark';
+        document.body.setAttribute('data-theme', t);
+        localStorage.setItem('theme', t);
+      });
     }
-  })();
-});
-</script>
+
+    // Scrollspy + observer highlight
+    const ids = ['about','publications','projects','teaching','contact'];
+    const secEls = ids.map(id => document.getElementById(id)).filter(Boolean);
+
+    function setActive(id){
+      document.querySelectorAll('.side-link[href^="#"]').forEach(a=>{
+        a.classList.remove('active'); a.removeAttribute('aria-current');
+      });
+      const link = document.querySelector(`.side-link[href="#${id}"]`);
+      if (link){ link.classList.add('active'); link.setAttribute('aria-current','location'); }
+    }
+
+    function setActiveByScroll(){
+      let bestId = null, bestDist = Infinity, focusY = window.innerHeight * 0.35;
+      secEls.forEach(el=>{
+        const r = el.getBoundingClientRect();
+        const d = Math.abs(r.top - focusY);
+        if (d < bestDist){ bestDist = d; bestId = el.id; }
+      });
+      if (bestId) setActive(bestId);
+    }
+
+    const ratios = {};
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ ratios[e.target.id] = e.intersectionRatio; });
+      const best = Object.entries(ratios).sort((a,b)=>b[1]-a[1])[0];
+      if (best) setActive(best[0]);
+    }, { root: null, rootMargin: '-25% 0px -55% 0px', threshold: [0,0.25,0.5,0.75,1] });
+    secEls.forEach(el=> io.observe(el));
+    ['scroll','resize'].forEach(evt => window.addEventListener(evt, setActiveByScroll, {passive:true}));
+    setActiveByScroll();
+
+    // Footer info
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('updated').textContent = new Date().toLocaleDateString();
+
+    // Email obfuscation
+    (function(){
+      const user = 'reza.jrp';
+      const domain = 'gmail.com';
+      const link = document.getElementById('email');
+      if (link){
+        link.textContent = user + '@' + domain;
+        link.href = 'mailto:' + user + '@' + domain;
+      }
+    })();
+  });
+  </script>
 </body>
 </html>
-
