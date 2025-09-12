@@ -419,7 +419,7 @@
       });
     }
 
-    /* ===== Scrollspy (robust, top-based) ===== */
+    /* ===== Scrollspy (pivot-line method) ===== */
     const ids = ['about','publications','projects','teaching','contact'];
     const sections = ids.map(id => document.getElementById(id)).filter(Boolean);
     const headerEl = document.querySelector('header');
@@ -432,21 +432,27 @@
       if (link){ link.classList.add('active'); link.setAttribute('aria-current','location'); }
     }
 
-    function setActiveByScrollY(){
-      const headerH = (headerEl?.offsetHeight || 80) + 12; // sticky header + small margin
-      const y = window.scrollY + headerH;
+    function setActiveByScroll(){
+      const headerH = (headerEl?.offsetHeight || 80);
+      const pivot = window.scrollY + headerH + window.innerHeight * 0.25; // 25% below header
+      const docBottom = window.scrollY + window.innerHeight;
+      const maxScroll = document.documentElement.scrollHeight - 4;
 
-      // pick the last section whose top is above the adjusted viewport top
-      let activeId = sections[0]?.id;
+      // If we're at the very bottom, force last section
+      if (docBottom >= maxScroll) { setActive(sections[sections.length-1].id); return; }
+
+      let current = sections[0]?.id;
       for (const el of sections){
-        if (y >= el.offsetTop) activeId = el.id;
+        const top = el.offsetTop;
+        const bottom = top + el.offsetHeight;
+        if (pivot >= top && pivot < bottom) { current = el.id; break; }
       }
-      if (activeId) setActive(activeId);
+      if (current) setActive(current);
     }
 
-    window.addEventListener('scroll', setActiveByScrollY, { passive:true });
-    window.addEventListener('resize', setActiveByScrollY);
-    setActiveByScrollY();
+    window.addEventListener('scroll', setActiveByScroll, { passive:true });
+    window.addEventListener('resize', setActiveByScroll);
+    setActiveByScroll();
 
     // Footer info
     document.getElementById('year').textContent = new Date().getFullYear();
