@@ -273,30 +273,36 @@
       </div>
     </section>
 
-    <section id="projects">
+       <section id="projects">
       <div class="container">
         <h2>Projects</h2>
         <div class="two-col">
+    
+          <!-- TECS companion project -->
           <div class="project">
-            <h3>PreCISE — Predictable GPU Scheduling</h3>
-            <p>Limited-preemptive scheduling for concurrent DNN inference with strong timing guarantees. Includes pipelines for profiling, schedulability sweeps, and visualization.</p>
-            <p><a href="#">Code</a> · <a href="#">Paper</a></p>
+            <h3>Reaction Latency Analysis Toolkit (TECS companion)</h3>
+            <p>Code & experiments for <em>Reaction Latency Analysis of Message Synchronization in Edge-Assisted Autonomous Driving</em>—includes scenario generators, sweep runners, and plotting utilities.</p>
+            <p>
+              <a href="https://github.com/RezaJafarpour1/Latency-Analysis" target="_blank" rel="noopener">Repository</a>
+              ·
+              <a href="https://dl.acm.org/doi/abs/10.1145/3736412" target="_blank" rel="noopener">TECS paper</a>
+            </p>
           </div>
+    
+          <!-- CUDA course project #1 -->
           <div class="project">
-            <h3>DART — Dependency-Aware Offloading for DAGs</h3>
-            <p>Node-level offloading of DAG tasks to edge servers with response-time analysis, ensuring critical-path deadlines while raising utilization.</p>
-            <p><a href="#">Code</a> · <a href="#">Preprint</a></p>
+            <h3>GEMM Microbenchmark Capstone (CUDA)</h3>
+            <p>Implements and benchmarks single-precision GEMM across CPU, naïve CUDA, tiled shared-memory kernels, and cuBLAS, with a CLI, CSV logging, many-small vs few-large runs, and plotting.</p>
+            <p><a href="https://github.com/RezaJafarpour1/GEMM_CAPSTONE" target="_blank" rel="noopener">Repository</a></p>
           </div>
+    
+          <!-- CUDA course project #2 -->
           <div class="project">
-            <h3>Latency Analysis Toolkit</h3>
-            <p>Reproducible experiments for reaction latency and message synchronization in edge-assisted AV stacks, with plotting and CSV export.</p>
-            <p><a href="https://github.com/RezaJafarpour1/Latency-Analysis" target="_blank" rel="noopener">Repository</a></p>
+            <h3>CUDA Image Pipeline — GPU Specialization Project</h3>
+            <p>Multi-stream CUDA pipeline for grayscale PGM images with Gaussian blur, box filter, Sobel edges, and histogram equalization; logs per-op timings and throughput.</p>
+            <p><a href="https://github.com/RezaJafarpour1/GPU_Specialization_Project" target="_blank" rel="noopener">Repository</a></p>
           </div>
-          <div class="project">
-            <h3>CUDA / cuBLAS / cuFFT Examples</h3>
-            <p>Educational CUDA kernels and GPU math examples demonstrating streams, concurrency, and memory optimizations.</p>
-            <p><a href="#">Code</a></p>
-          </div>
+    
         </div>
       </div>
     </section>
@@ -404,6 +410,7 @@
   </script>
 </body>
 </html>
+
 
 
 
