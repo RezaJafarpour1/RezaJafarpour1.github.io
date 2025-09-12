@@ -301,88 +301,83 @@
   </script>
 
   <script>
-    // Mobile menu toggle
-    const menuBtn = document.getElementById('menuBtn');
-    const menu = document.getElementById('menu');
-    if (menuBtn && menu){
-      menuBtn.addEventListener('click', () => {
-        const open = menu.style.display === 'flex';
-        menu.style.display = open ? 'none' : 'flex';
-        menuBtn.setAttribute('aria-expanded', String(!open));
-      });
-    }
+window.addEventListener('DOMContentLoaded', () => {
+  // (Optional) Mobile menu toggle – guarded in case elements don't exist
+  const menuBtn = document.getElementById('menuBtn');
+  const menu = document.getElementById('menu');
+  if (menuBtn && menu){
+    menuBtn.addEventListener('click', () => {
+      const open = menu.style.display === 'flex';
+      menu.style.display = open ? 'none' : 'flex';
+      menuBtn.setAttribute('aria-expanded', String(!open));
+    });
+  }
 
-    // Theme toggle with persistence + prefers-color-scheme
-    const themeBtn = document.getElementById('theme');
-    const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
-    const storedTheme = localStorage.getItem('theme');
-    if (storedTheme) document.body.setAttribute('data-theme', storedTheme);
-    else if (prefersLight) document.body.setAttribute('data-theme','light');
+  // Theme init (pref + storage)
+  const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+  const storedTheme = localStorage.getItem('theme');
+  if (storedTheme) document.body.setAttribute('data-theme', storedTheme);
+  else if (prefersLight) document.body.setAttribute('data-theme','light');
 
-    if (themeBtn){
-      themeBtn.addEventListener('click', () => {
-        const t = document.body.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-        document.body.setAttribute('data-theme', t);
-        localStorage.setItem('theme', t);
-      });
-    }
+  // Sidebar theme switch
+  const themeSwitch = document.getElementById('themeSwitch');
+  if (themeSwitch){
+    themeSwitch.checked = (document.body.getAttribute('data-theme') === 'light');
+    themeSwitch.addEventListener('change', () => {
+      const t = themeSwitch.checked ? 'light' : 'dark';
+      document.body.setAttribute('data-theme', t);
       localStorage.setItem('theme', t);
     });
+  }
 
-    // Sidebar active link highlight (scrollspy + observer)
-    const ids = ['about','publications','projects','teaching','contact'];
-    const secEls = ids.map(id => document.getElementById(id)).filter(Boolean);
+  // Scrollspy + observer highlight
+  const ids = ['about','publications','projects','teaching','contact'];
+  const secEls = ids.map(id => document.getElementById(id)).filter(Boolean);
 
-    function setActive(id){
-      document.querySelectorAll('.side-link[href^="#"]').forEach(a=>{ a.classList.remove('active'); a.removeAttribute('aria-current');});
-      const link = document.querySelector(`.side-link[href="#${id}"]`);
-      if (link){ link.classList.add('active'); link.setAttribute('aria-current','location'); }
-    }
-
-    // Fallback scroll calculation
-    function setActiveByScroll(){
-      let bestId = null, bestDist = Infinity, focusY = window.innerHeight * 0.35;
-      secEls.forEach(el=>{ const r = el.getBoundingClientRect(); const d = Math.abs(r.top - focusY); if(d < bestDist){ bestDist = d; bestId = el.id; }});
-      if (bestId) setActive(bestId);
-    }
-
-    // IntersectionObserver for more accurate section tracking
-    const ratios = {};
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{ ratios[e.target.id] = e.intersectionRatio; });
-      const best = Object.entries(ratios).sort((a,b)=>b[1]-a[1])[0];
-      if (best) setActive(best[0]);
-    }, { root: null, rootMargin: '-25% 0px -55% 0px', threshold: [0,0.25,0.5,0.75,1] });
-    secEls.forEach(el=> io.observe(el));
-
-    ['scroll','resize'].forEach(evt => window.addEventListener(evt, setActiveByScroll, {passive:true}));
-    setActiveByScroll();
-
-    // Theme toggle from sidebar (checkbox)
-    const themeSwitch = document.getElementById('themeSwitch');
-    if (themeSwitch){
-      // Initialize from current state (which came from storage or prefers-color-scheme)
-      themeSwitch.checked = (document.body.getAttribute('data-theme') === 'light');
-      themeSwitch.addEventListener('change', () => {
-        const t = themeSwitch.checked ? 'light' : 'dark';
-        document.body.setAttribute('data-theme', t);
-        localStorage.setItem('theme', t);
-      });
+  function setActive(id){
+    document.querySelectorAll('.side-link[href^="#"]').forEach(a=>{
+      a.classList.remove('active'); a.removeAttribute('aria-current');
     });
-    }
+    const link = document.querySelector(`.side-link[href="#${id}"]`);
+    if (link){ link.classList.add('active'); link.setAttribute('aria-current','location'); }
+  }
 
-    // Footer year + updated date
-    document.getElementById('year').textContent = new Date().getFullYear();
-    document.getElementById('updated').textContent = new Date().toLocaleDateString();
+  function setActiveByScroll(){
+    let bestId = null, bestDist = Infinity, focusY = window.innerHeight * 0.35;
+    secEls.forEach(el=>{
+      const r = el.getBoundingClientRect();
+      const d = Math.abs(r.top - focusY);
+      if (d < bestDist){ bestDist = d; bestId = el.id; }
+    });
+    if (bestId) setActive(bestId);
+  }
 
-    // Email obfuscation (replace with your real email)
-    (function(){
-      const user = 'reza.jrp';
-      const domain = 'gmail.com';
-      const link = document.getElementById('email');
+  const ratios = {};
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ ratios[e.target.id] = e.intersectionRatio; });
+    const best = Object.entries(ratios).sort((a,b)=>b[1]-a[1])[0];
+    if (best) setActive(best[0]);
+  }, { root: null, rootMargin: '-25% 0px -55% 0px', threshold: [0,0.25,0.5,0.75,1] });
+  secEls.forEach(el=> io.observe(el));
+  ['scroll','resize'].forEach(evt => window.addEventListener(evt, setActiveByScroll, {passive:true}));
+  setActiveByScroll();
+
+  // Footer info
+  document.getElementById('year').textContent = new Date().getFullYear();
+  document.getElementById('updated').textContent = new Date().toLocaleDateString();
+
+  // Email obfuscation
+  (function(){
+    const user = 'reza.jrp';
+    const domain = 'gmail.com';
+    const link = document.getElementById('email');
+    if (link){
       link.textContent = user + '@' + domain;
       link.href = 'mailto:' + user + '@' + domain;
-    })();
-  </script>
+    }
+  })();
+});
+</script>
 </body>
 </html>
+
