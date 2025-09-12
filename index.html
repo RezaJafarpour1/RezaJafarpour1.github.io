@@ -410,8 +410,8 @@
 
       // Gate last section: require both depth into it and adequate remaining scroll
       if (candidate === lastEl.id){
-        const minDepth = 180;                 // pixels the pivot must be inside "contact"
-        const minRemaining = 150;              // require some room to scroll; avoids premature switch
+        const minDepth = 250;                 // pixels the pivot must be inside "contact"
+        const minRemaining = 200;              // require some room to scroll; avoids premature switch
         if (pivotY < lastEl.offsetTop + minDepth || remaining < minRemaining){
           candidate = prevActive;             // stay on Teaching until deeper into Contact or at very bottom
         }
@@ -431,6 +431,7 @@
   </script>
 </body>
 </html>
+
 
 
 
