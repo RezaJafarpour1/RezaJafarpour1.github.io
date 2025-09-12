@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reza Jafarpourmarzouni — Real‑Time & Embedded Systems</title>
+  <meta name="description" content="Ph.D. researcher focused on real‑time & embedded systems for edge‑assisted autonomous driving. Publications, projects, CV, and contact." />
+  
+  <!-- Open Graph / Twitter (replace content values) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Reza Jafarpourmarzouni — Portfolio" />
+  <meta property="og:description" content="Real‑time & embedded systems • Edge‑assisted autonomous driving" />
+  <meta property="og:image" content="/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  
+  <!-- Favicon (replace with your files when ready) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14' font-size='14'>RZ</text></svg>">
+
+  <style>
+    :root{
+      --bg: #0b1020;           /* dark background */
+      --bg-elev: #11162a;      /* elevated surfaces */
+      --text: #e6ebff;         /* primary text */
+      --muted:#a7b0d4;         /* secondary text */
+      --accent:#6aa1ff;        /* accent */
+      --accent-2:#94f1c7;      /* secondary accent */
+      --card:#0f1426;
+      --border:#1f2742;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    [data-theme="light"]{
+      --bg: #ffffff;
+      --bg-elev: #f3f6ff;
+      --text: #0c1538;
+      --muted:#4b5680;
+      --accent:#1d4ed8;
+      --accent-2:#0ea5e9;
+      --card:#ffffff;
+      --border:#e6ecff;
+      --shadow: 0 10px 30px rgba(3,7,18,.08);
+    }
+    html,body{margin:0;padding:0;height:100%;scroll-behavior:smooth;background:var(--bg);color:var(--text);font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1100px;margin-inline:auto;padding:24px}
+    header{position:sticky;top:0;background:linear-gradient(to bottom, rgba(11,16,32,.9), rgba(11,16,32,.6));backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--border);z-index:50}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.2px}
+    .brand .logo{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;color:white;font-size:14px;box-shadow:var(--shadow)}
+    .nav-links{display:flex;gap:18px;align-items:center}
+    .nav-links a{color:var(--muted)}
+    .btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);background:var(--bg-elev);color:var(--text);padding:10px 14px;border-radius:12px;font-weight:600;box-shadow:var(--shadow)}
+    .btn:hover{transform:translateY(-1px);transition:transform .15s}
+    .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#071022;border:0}
+
+    /* Hero */
+    .hero{padding:64px 24px 36px}
+    .grid{display:grid;gap:28px}
+    @media(min-width:900px){.grid{grid-template-columns:1.2fr .8fr;align-items:center}}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:24px;box-shadow:var(--shadow)}
+    .kicker{color:var(--accent-2);font-weight:700;letter-spacing:.18em;text-transform:uppercase;font-size:12px}
+    h1{font-size:40px;line-height:1.1;margin:10px 0 14px}
+    .lead{color:var(--muted);font-size:18px;max-width:60ch}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+    .avatar{width:160px;height:160px;border-radius:22px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;font-size:56px;color:#0b1020;font-weight:800;margin:auto}
+    .small{font-size:12px;color:var(--muted)}
+
+    /* Sections */
+    section{padding:18px 24px}
+    section h2{font-size:28px;margin:8px 0 16px}
+    .two-col{display:grid;gap:18px}
+    @media(min-width:800px){.two-col{grid-template-columns:1fr 1fr}}
+    .list{display:grid;gap:12px}
+    .pub{padding:16px;border:1px solid var(--border);border-radius:14px;background:var(--bg-elev)}
+    .pub .meta{color:var(--muted);font-size:13px}
+    .project{padding:16px;border:1px solid var(--border);border-radius:14px;background:var(--bg-elev)}
+    .project h3{margin:0 0 8px;font-size:18px}
+
+    /* Footer */
+    footer{padding:40px 24px;border-top:1px solid var(--border);color:var(--muted);text-align:center}
+
+    /* Mobile menu */
+    .hamburger{display:inline-flex;flex-direction:column;gap:4px;border:1px solid var(--border);background:var(--bg-elev);padding:10px;border-radius:10px}
+    .hamburger span{width:20px;height:2px;background:var(--text)}
+    #menu{display:none}
+    @media(min-width:900px){#menu{display:flex}}
+
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}
+  </style>
+</head>
+<body>
+  <a class="sr-only" href="#main">Skip to content</a>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">RZ</div>
+        <span>Reza Jafarpourmarzouni</span>
+      </div>
+
+      <nav class="nav-links">
+        <button id="menuBtn" class="hamburger" aria-label="Toggle menu" aria-controls="menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <div id="menu" role="menu" aria-label="Primary">
+          <a href="#about">About</a>
+          <a href="#publications">Publications</a>
+          <a href="#projects">Projects</a>
+          <a href="#teaching">Teaching</a>
+          <a href="#contact">Contact</a>
+          <button id="theme" class="btn" aria-label="Toggle theme">Toggle theme</button>
+          <a class="btn primary" href="./Reza_Jafarpourmarzouni_CV.pdf" target="_blank" rel="noopener">Download CV</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container grid">
+        <div class="card">
+          <div class="kicker">Real‑Time & Embedded Systems • Edge‑Assisted Autonomous Driving</div>
+          <h1>Hi, I’m Reza — I design dependable timing for autonomy.</h1>
+          <p class="lead">Ph.D. researcher at Wayne State University working on predictable scheduling and systems for software‑defined vehicles. I bridge on‑board and edge compute so perception & control meet deadlines.</p>
+          <div class="actions">
+            <a class="btn primary" href="#projects">See projects</a>
+            <a class="btn" href="#publications">Read publications</a>
+            <a class="btn" href="https://github.com/RezaJafarpour1" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn" href="https://www.linkedin.com/in/rezajrp" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+          <p class="small" style="margin-top:10px">Actively seeking roles in real‑time/embedded systems, autonomy platforms, and edge computing.</p>
+        </div>
+        <div class="card" style="display:grid;place-items:center">
+          <div class="avatar" aria-label="Avatar with initials">RZ</div>
+          <p class="small" style="text-align:center;margin-top:10px">Add your headshot by replacing the avatar with an <code>&lt;img&gt;</code>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container two-col">
+        <div class="card">
+          <h2>About</h2>
+          <p>I build theory‑grounded, experimentally‑validated scheduling for real‑time autonomous systems. My work spans utilization modeling, DAG scheduling, GPU inference timing, and edge offloading. I like transforming research into practical, dependable systems.</p>
+          <ul class="list">
+            <li>Research areas: real‑time & embedded systems, edge computing, autonomous driving, GPU scheduling.</li>
+            <li>Tooling: Python/CUDA/C++, PyTorch, ROS, Linux, Matplotlib, GitHub Actions.</li>
+            <li>Keywords: EDF, DAG tasks, limited preemption, offloading, response time, schedulability.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>Highlights</h2>
+          <ul class="list">
+            <li>First‑author publications and submissions in top venues (ACM TECS, IEEE IoT‑J, MOST).</li>
+            <li>Built large scenario sweeps for schedulability & deadline‑miss analysis; reproducible pipelines.</li>
+            <li>Designed edge‑assisted scheduling techniques (e.g., PreCISE, DART) for predictable perception.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <div class="container">
+        <h2>Selected Publications</h2>
+        <div class="list">
+          <article class="pub">
+            <strong>Reaction Latency Analysis of Message Synchronization in Edge‑Assisted Autonomous Driving</strong><br>
+            <span class="meta">ACM Transactions on Embedded Computing Systems (TECS), 2025. <em>(accepted)</em></span>
+          </article>
+          <article class="pub">
+            <strong>Towards Real‑Time and Efficient Perception Workflows in Software‑Defined Vehicles</strong><br>
+            <span class="meta">IEEE Internet of Things Journal (IoT‑J), 2024.</span>
+          </article>
+          <article class="pub">
+            <strong>Enhancing Real‑Time Inference Performance for Time‑Critical Software‑Defined Vehicles</strong><br>
+            <span class="meta">IEEE MOST, 2024.</span>
+          </article>
+          <p class="small">Add links to PDFs/DOIs/Preprints. You can also auto‑generate this list from a BibTeX file later.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <h2>Projects</h2>
+        <div class="two-col">
+          <div class="project">
+            <h3>PreCISE — Predictable GPU Scheduling</h3>
+            <p>Limited‑preemptive scheduling for concurrent DNN inference with strong timing guarantees. Includes pipelines for profiling, schedulability sweeps, and visualization.</p>
+            <p><a href="#">Code</a> · <a href="#">Paper</a></p>
+          </div>
+          <div class="project">
+            <h3>DART — Dependency‑Aware Offloading for DAGs</h3>
+            <p>Node‑level offloading of DAG tasks to edge servers with response‑time analysis, ensuring critical‑path deadlines while raising utilization.</p>
+            <p><a href="#">Code</a> · <a href="#">Preprint</a></p>
+          </div>
+          <div class="project">
+            <h3>Latency Analysis Toolkit</h3>
+            <p>Reproducible experiments for reaction latency and message synchronization in edge‑assisted AV stacks, with plotting and CSV export.</p>
+            <p><a href="https://github.com/RezaJafarpour1/Latency-Analysis" target="_blank" rel="noopener">Repository</a></p>
+          </div>
+          <div class="project">
+            <h3>CUDA / cuBLAS / cuFFT Examples</h3>
+            <p>Educational CUDA kernels and GPU math examples demonstrating streams, concurrency, and memory optimizations.</p>
+            <p><a href="#">Code</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="teaching">
+      <div class="container two-col">
+        <div class="card">
+          <h2>Teaching & Service</h2>
+          <ul class="list">
+            <li>Graduate Teaching Assistant — proctoring, mentoring, grading, and lab support.</li>
+            <li>Reviewer for embedded/real‑time venues; student mentoring and outreach.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>Talks</h2>
+          <ul class="list">
+            <li>Invited/department talks on edge‑assisted autonomy and predictable GPU inference.</li>
+            <li>Conference presentations and poster sessions (IROS Detroit, etc.).</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container two-col">
+        <div class="card">
+          <h2>Contact</h2>
+          <p>If you'd like to discuss research or roles in real‑time autonomy systems, feel free to reach out.</p>
+          <p>Email: <a id="email" href="#">[enable JS]</a></p>
+          <p>Also on <a href="https://www.linkedin.com/in/rezajrp" target="_blank" rel="noopener">LinkedIn</a> and <a href="https://github.com/RezaJafarpour1" target="_blank" rel="noopener">GitHub</a>.</p>
+        </div>
+        <div class="card">
+          <h2>CV & Links</h2>
+          <ul class="list">
+            <li><a href="./Reza_Jafarpourmarzouni_CV.pdf" target="_blank" rel="noopener">Download CV (PDF)</a></li>
+            <li><a href="#">Google Scholar</a> · <a href="#">Semantic Scholar</a></li>
+            <li><a href="#">ORCID</a> · <a href="#">DBLP</a></li>
+          </ul>
+          <p class="small">Place your <code>Reza_Jafarpourmarzouni_CV.pdf</code> in the same folder as this page.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div>&copy; <span id="year"></span> Reza Jafarpourmarzouni. Built with ❤ for speed, a11y, and clarity.</div>
+      <div class="small">Last updated <span id="updated"></span>. Theme <a href="#" id="themeLink">toggle</a>.</div>
+    </div>
+  </footer>
+
+  <!-- Structured data (fill handles later) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Reza Jafarpourmarzouni",
+    "jobTitle": "Ph.D. Researcher in Computer Science",
+    "affiliation": {"@type":"CollegeOrUniversity","name":"Wayne State University"},
+    "url": "https://example.com",
+    "sameAs": [
+      "https://www.linkedin.com/in/rezajrp",
+      "https://github.com/RezaJafarpour1"
+    ]
+  }
+  </script>
+
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const menu = document.getElementById('menu');
+    menuBtn.addEventListener('click', () => {
+      const open = menu.style.display === 'flex';
+      menu.style.display = open ? 'none' : 'flex';
+      menuBtn.setAttribute('aria-expanded', String(!open));
+    });
+
+    // Theme toggle with persistence + prefers-color-scheme
+    const themeBtn = document.getElementById('theme');
+    const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme) document.body.setAttribute('data-theme', storedTheme);
+    else if (prefersLight) document.body.setAttribute('data-theme','light');
+
+    themeBtn.addEventListener('click', () => {
+      const t = document.body.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      document.body.setAttribute('data-theme', t);
+      localStorage.setItem('theme', t);
+    });
+
+    // Footer year + updated date
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('updated').textContent = new Date().toLocaleDateString();
+
+    // Email obfuscation (replace with your real email)
+    (function(){
+      const user = 'reza.jrp';
+      const domain = 'gmail.com';
+      const link = document.getElementById('email');
+      link.textContent = user + '@' + domain;
+      link.href = 'mailto:' + user + '@' + domain;
+    })();
+  </script>
+</body>
+</html>
