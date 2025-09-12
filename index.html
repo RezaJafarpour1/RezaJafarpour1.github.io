@@ -189,19 +189,25 @@
 
   <main id="main">
     <section class="hero">
-      <div class="container grid">
-        <div class="card">
-          <div class="kicker">Real-Time & Embedded Systems • Edge-Assisted Autonomous Driving</div>
-          <h1>Hi, I’m Reza — I design dependable timing for autonomy.</h1>
-          <p class="lead">Ph.D. researcher at Wayne State University working on predictable scheduling and systems for software-defined vehicles. I bridge on-board and edge compute so perception & control meet deadlines.</p>
-          <div class="actions">
-            <a class="btn primary" href="#projects">See projects</a>
-            <a class="btn" href="#publications">Read publications</a>
-            <a class="btn" href="https://github.com/RezaJafarpour1" target="_blank" rel="noopener">GitHub</a>
-            <a class="btn" href="https://www.linkedin.com/in/reza-jafarpourmarzouni-3471b3277/" target="_blank" rel="noopener">LinkedIn</a>
-          </div>
-          <p class="small" style="margin-top:10px">Actively seeking roles in real-time/embedded systems, autonomy platforms, and edge computing.</p>
-        </div>
+  <div class="container grid">
+    <div class="card">
+      <div class="kicker">Real-Time & Embedded Systems • Edge-Assisted Autonomous Driving</div>
+      <h1>Hi, I’m Reza — I make autonomy predictable and fast.</h1>
+      <p class="lead">
+        Ph.D. researcher at Wayne State University focused on scheduling theory and GPU/edge optimization
+        for software-defined vehicles. I design models and systems so perception & control pipelines hit
+        their deadlines under real-world constraints.
+      </p>
+      <div class="actions">
+        <a class="btn primary" href="#projects">See projects</a>
+        <a class="btn" href="#publications">Read publications</a>
+        <a class="btn" href="https://github.com/RezaJafarpour1" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/reza-jafarpourmarzouni-3471b3277/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <p class="small" style="margin-top:10px">
+        Actively seeking roles in real-time/embedded systems, autonomy platforms, and edge computing.
+      </p>
+    </div>
 
         <!-- Headshot -->
         <div class="card headshot-card">
@@ -215,27 +221,37 @@
       </div>
     </section>
 
-    <section id="about">
-      <div class="container two-col">
-        <div class="card">
-          <h2>About</h2>
-          <p>I build theory-grounded, experimentally-validated scheduling for real-time autonomous systems. My work spans utilization modeling, DAG scheduling, GPU inference timing, and edge offloading. I like transforming research into practical, dependable systems.</p>
-          <ul class="list">
-            <li>Research areas: real-time & embedded systems, edge computing, autonomous driving, GPU scheduling.</li>
-            <li>Tooling: Python/CUDA/C++, PyTorch, ROS, Linux, Matplotlib, GitHub Actions.</li>
-            <li>Keywords: EDF, DAG tasks, limited preemption, offloading, response time, schedulability.</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h2>Highlights</h2>
-          <ul class="list">
-            <li>First-author publications and submissions in top venues (ACM TECS, IEEE IoT-J, MOST).</li>
-            <li>Built large scenario sweeps for schedulability & deadline-miss analysis; reproducible pipelines.</li>
-            <li>Designed edge-assisted scheduling techniques (e.g., PreCISE, DART) for predictable perception.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+<section id="about">
+  <div class="container two-col">
+    <!-- About -->
+    <div class="card">
+      <h2>About</h2>
+      <p>
+        I’m a goal-oriented researcher in real-time & embedded systems, with work spanning scheduling theory,
+        GPU/DNN scheduling, and edge-assisted autonomous driving. I like turning theory into dependable systems
+        that are both predictable and efficient.
+      </p>
+      <ul class="list">
+        <li><strong>Focus:</strong> fixed/EDF scheduling, limited-preemption, DAG & self-suspending tasks, cause–effect chains, latency/tardiness analysis.</li>
+        <li><strong>Platforms:</strong> ROS2; PyTorch → ONNX → TensorRT deployment; Linux.</li>
+        <li><strong>Tooling:</strong> Python/C/C++, CUDA, Git, Docker; workflow acceleration (pruning, quantization: FP32/FP16/INT8).</li>
+        <li><strong>Outcome-driven:</strong> I combine modeling, implementation, and large-scale experiments to guide design choices for SDVs.</li>
+      </ul>
+    </div>
+
+    <!-- Highlights -->
+    <div class="card">
+      <h2>Highlights</h2>
+      <ul class="list">
+        <li><strong>PreCISE</strong> (limited-preemptive GPU scheduling): cut re-execution overhead by <strong>90%</strong> and improved schedulability by <strong>24.5%</strong>.</li>
+        <li><strong>Reaction-latency analysis</strong> for ROS2 synchronization in edge-assisted AVs: derived safe bounds and validated them experimentally.</li>
+        <li><strong>IoT-J workflow optimization:</strong> up to <strong>18×</strong> faster inference, <strong>16.5×</strong> higher throughput, and <strong>30%</strong> lower GPU/memory usage.</li>
+        <li><strong>TensorRT precision study:</strong> FP16 gave the best speed/accuracy trade-off; INT8 was fastest for real-time perception.</li>
+        <li>Published in <strong>ACM TECS</strong>, <strong>IEEE IoT-J</strong>, and <strong>IEEE MOST</strong>.</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
        <section id="publications">
       <div class="container">
@@ -430,6 +446,7 @@
   </script>
 </body>
 </html>
+
 
 
 
