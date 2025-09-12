@@ -13,7 +13,7 @@
   <meta property="og:image" content="/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Favicon -->
+  <!-- Favicon (will be kept in sync by the script below) -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14' font-size='14'>RJ</text></svg>">
 
   <style>
@@ -162,7 +162,7 @@
   <header>
     <div class="container nav">
       <div class="brand">
-        <div class="logo" aria-hidden="true">RZ</div>
+        <div class="logo" aria-hidden="true">RJ</div>
         <span>Reza Jafarpourmarzouni</span>
       </div>
     </div>
@@ -170,7 +170,7 @@
 
   <aside class="sidebar" aria-label="Section navigation">
     <div class="sidebar-inner">
-      <div class="sidebar-brand">RZ</div>
+      <div class="sidebar-brand">RJ</div>
       <a href="#about" class="side-link">About</a>
       <a href="#publications" class="side-link">Publications</a>
       <a href="#projects" class="side-link">Projects</a>
@@ -389,6 +389,22 @@
 
   <script>
   window.addEventListener('DOMContentLoaded', () => {
+    /* --- Auto-generate initials from the name and sync favicon --- */
+    const nameEl = document.querySelector('.brand span');
+    const initials = (nameEl?.textContent || 'Reza Jafarpourmarzouni')
+      .trim()
+      .split(/\s+/)
+      .map(s => s[0])
+      .slice(0, 2)
+      .join('')
+      .toUpperCase();
+
+    document.querySelectorAll('.logo, .sidebar-brand').forEach(el => { el.textContent = initials; });
+    const fav = document.querySelector('link[rel="icon"]');
+    if (fav) {
+      fav.href = `data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14' font-size='14'>${initials}</text></svg>`;
+    }
+
     // Theme on <html>
     const root = document.documentElement;
     const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
@@ -444,11 +460,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
